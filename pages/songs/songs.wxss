@@ -1,0 +1,71 @@
+/* pages/songs/songs.wxss */
+#search{  
+  background-color: lightgray;
+  width: 650rpx;
+  border-radius: 60rpx;
+  padding: 20rpx;
+
+  display: flex;
+  justify-content: left;
+
+  margin-top: 50rpx;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#search image{
+  height: 40rpx;
+  width: 40rpx;
+}
+
+.songsList{
+  width: 700rpx;
+
+  margin-top: 50rpx;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.song{
+  height: 120rpx;
+  width: 700rpx;
+  display: flex;
+  justify-content: space-between;
+
+  border-bottom:1px solid lightgray;
+}
+
+.detail{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.songName{
+  /*文本过长以省略号代替超过的部分*/
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 550rpx;
+
+  color: rgb(94, 153, 230);
+  font-size: 30rpx;
+}
+
+.description{
+  color: gray;
+  font-size: 20rpx;
+
+  /*文本过长以省略号代替超过的部分*/
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 550rpx;
+}
+
+.song image{
+  width: 50rpx;
+  height: 50rpx;
+
+  margin-top: 30rpx;
+}

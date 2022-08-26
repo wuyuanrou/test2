@@ -1,0 +1,20 @@
+<!--pages/search/search.wxml-->
+<view id="container_1">
+  <view id="search">
+    <image src="../../img/icon_search_black.png" bindtap="sendSearchWord"></image>
+    <input type="text" name="search" placeholder="搜索歌曲" bindinput="getSearchWord"/>
+  </view>
+  <view id="hot_board">
+    <view id="title">热搜榜</view>
+    <view class="hot_news" wx:for="{{hot}}" wx:key="index">
+      <text wx:if="{{index<3}}" class="top3">{{index+1}}</text>
+      <text wx:else="{{index<3}}" class="not_top3">{{index+1}}</text>
+      <view class="detail">
+        <text class="searchWord">{{item.searchWord}}</text>
+        <text hidden="{{index!==0}}" class="HOT">HOT</text>
+        <text class="description">{{item.content}}</text>
+      </view>
+      <text class="score">{{item.score}}</text>
+    </view>
+  </view>
+</view>

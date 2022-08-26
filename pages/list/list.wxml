@@ -1,0 +1,25 @@
+<!--pages/list/list.wxml-->
+<view id="container_1">
+  <!--
+  <view id="title">
+    <text>网易云音乐</text>
+  </view>
+  -->
+  <view id="search">
+    <image src="../../img/icon_search_black.png"></image>
+    <input type="text" name="search" placeholder="搜索歌曲" bindtap="goToSearch"/>
+  </view>
+  <view class="toplists" wx:for="{{toplists}}" wx:if="{{index<4}}" wx:key="index" bindtap="gotoSonglist" data-id="{{item.id}}">
+    <view class="toplist">
+      <view class="cover">
+        <image class="songListCover" src="{{item.coverImgUrl}}"></image>
+        <view class="updateFrequency">{{item.updateFrequency}}</view>
+      </view>
+      <view class="info">
+        <text>1.{{item.tracks[0].first}}-{{item.tracks[0].second}}</text>
+        <text>2.{{item.tracks[1].first}}-{{item.tracks[1].second}}</text>
+        <text>3.{{item.tracks[2].first}}-{{item.tracks[2].second}}</text>
+      </view>
+    </view>
+  </view>
+</view>

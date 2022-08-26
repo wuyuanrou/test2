@@ -1,0 +1,78 @@
+/* pages/list/list.wxss */
+/*
+#title{
+  height: 200rpx;
+  text-align: center;
+  line-height: 200rpx;
+}
+*/
+
+#search{  
+  background-color: lightgray;
+  width: 650rpx;
+  border-radius: 60rpx;
+  padding: 20rpx;
+
+  display: flex;
+  justify-content: left;
+
+  margin-top: 50rpx;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#search image{
+  height: 40rpx;
+  width: 40rpx;
+}
+
+.toplists{
+  display: flex;
+
+  width: 700rpx;
+  margin-top: 50rpx;
+  margin-left: 25rpx;
+  margin-right: 25rpx;
+}
+
+.toplist{
+  display: flex;
+  justify-content: space-around;
+}
+
+.cover{
+  position: relative;
+}
+
+.cover image{
+  width: 250rpx;
+  height: 250rpx;
+
+  border-radius: 10rpx;
+  margin-right: 10rpx;
+}
+
+.updateFrequency{
+  color: white;
+
+  /*字体位于图片上方*/
+  font-size: 25rpx;
+  position: absolute;
+  z-index: 20;
+  bottom: 20rpx;
+  left: 10rpx;
+}
+
+.info{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.info text{
+  /*文本过长以省略号代替超过的部分*/
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 400rpx;
+}

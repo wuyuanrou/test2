@@ -1,0 +1,62 @@
+<!--pages/play_song/play_song.wxml-->
+<view id="container_1" style="background: url({{imgUrl}}) no-repeat;background-attachment: fixed;background-size: 100% 100%; backface-visibility: 0.5;">
+  <!--<image class="background" mode="widthFix" src="{{imgUrl}}"></image>-->
+  <view id="page">
+    <view id="song_playing">
+      <text class="songName">{{songName}}</text>
+      <!--<swiper>
+        <swiper-item>-->
+          <view class="first">
+            <image class="startPlaying" src="{{playingIcon}}" bindtap="playSitu"></image>
+            <!--<image wx:else="{{IsPlaying=='false'}}" class="stopPlaying" src="{{playingIcon}}" bindtap="StopPlaying"></image>-->
+            <image class="{{situ=='play'? 'songImg':'clear'}}" src="{{imgUrl}}"></image>
+          </view>
+        <!--</swiper-item>
+        <swiper-item>-->
+          <scroll-view scroll-y="true" scroll-top="{{top}}">
+            <view  wx:for-index='in' wx:for="{{timeLrc}}" class="{{ in==index ? 'color':''}}">{{item[1]}}</view>
+          </scroll-view>
+        <!--</swiper-item>
+      </swiper>
+      -->
+    </view>
+    <audio bindtimeupdate="timechange" src="{{songUrl}}" action="{{action}}" bindended="finishPlaying"></audio>
+    <view class="recommendSongs" wx:if="{{recommendSongs.length!=1}}">
+      <text>喜欢这首歌的人也在听</text>
+      <view class="recommendSong" wx:for="{{recommendSongs}}" wx:key="index">
+        <view class="cover">
+          <image src="{{item.album.picUrl}}"></image>
+        </view>
+        <view class="detail" bindtap="playSong" data-songid="{{item.id}}">
+          <text class="playlist_name">{{item.name}}</text>
+          <text class="creator_name" wx:if="{{item.album.name!=''}}">{{item.artists[0].name}}-{{item.album.name}}</text>
+          <text class="creator_name" wx:else="{{item.album.name!=''}}">{{item.artists[0].name}}-未知专辑</text>
+        </view>
+        <view class="play_button">
+          <image src="../../img/icon_play_black.png"></image>
+        </view>
+      </view>
+    </view>
+    <view id="comment_zone">
+      <text>精彩评论</text>
+      <view class="comment" wx:for="{{comments}}" wx:key="index">
+        <view class="icon">
+          <image src="{{item.user.avatarUrl}}"></image>
+        </view>
+        <view class="detail">
+          <view class="head">
+            <view class="user_info">
+              <text class="user_name">{{item.user.nickname}}</text>
+              <text class="time">{{item.timeStr}}</text>
+            </view>
+            <view class="dislike">
+              <text>{{item.likedCount}}</text>
+              <image src="../../img/icon_like_black.png"></image>
+            </view>
+          </view>
+          <text class="content">{{item.content}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

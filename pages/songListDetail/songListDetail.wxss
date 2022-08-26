@@ -1,0 +1,134 @@
+/* pages/songListDetail/songListDetail.wxss */
+#playlist_info{
+  display: flex;
+  justify-content: space-around;
+
+  padding-left: 20rpx;
+  padding-top: 50rpx;
+  padding-bottom: 100rpx;
+}
+
+.cover{
+  position: relative;
+}
+
+.cover image{
+  width: 300rpx;
+  height: 300rpx;
+
+  border-radius: 10rpx;
+}
+
+.playCount{
+  color: white;
+
+  /*字体位于图片上方*/
+  font-size: 30rpx;
+  position: absolute;
+  z-index: 20;
+  top: 10rpx;
+  right: 20rpx;
+
+  display: flex;
+  align-items: center;
+}
+
+.detail{
+  height: 300rpx;
+  display: flex;
+  flex-direction: column;
+
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 40rpx;
+}
+
+.playlistName{
+  color: white;
+  font-size: 40rpx;
+}
+
+.middle{
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+
+  display: flex;
+}
+
+.avatar{
+  width: 50rpx;
+  height: 50rpx;
+
+  border-radius: 50rpx;
+  margin-right: 10rpx;
+}
+
+.creator{
+  color: white;
+  opacity: 0.8;
+  font-size: 30rpx;
+}
+
+.description{
+  color: white;
+  opacity: 0.8;
+  font-size: 20rpx;
+}
+
+#playlist_songs{
+  background-color: white;
+
+  border-radius: 50rpx 50rpx 0 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.song, .play_all{
+  display: grid;
+  grid-template-columns: 1fr 8fr 1fr;
+
+  margin-top: 20rpx;
+  margin-left: auto;
+  margin-right: auto;
+
+  padding-top: 20rpx;
+
+  height: 100rpx;
+  width: 700rpx;
+}
+
+.songInfo text{
+  /*文本过长以省略号代替超过的部分*/
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 400rpx;
+}
+
+.rank{
+  color: gray;
+}
+
+.origin_from{
+  color: gray;
+  font-size: 20rpx;
+
+  display: flex;
+  align-items: center;
+
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 400rpx;
+}
+
+
+.creators{
+  display: inline;
+}
+
+.play_button image{
+  width: 50rpx;
+  height: 50rpx;
+}

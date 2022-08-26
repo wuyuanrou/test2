@@ -1,0 +1,261 @@
+/* pages/play_song/play_song.wxss */
+
+/*#container image{
+  position: absolute;
+}
+
+.background{
+  width: 500%;
+  height: 500%;
+
+  position: absolute;
+
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.5;
+  
+}*/
+
+#page{
+  position: relative;
+
+  background-color: black;
+  opacity: 0.8;
+}
+
+#song_playing{
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+#song_playing text{
+  /*background-color: black;
+  opacity: 0.5;*/
+  color: white;
+  font-size: 50rpx;
+
+  display: block;
+  text-align: center;
+
+  line-height: 150rpx;
+}
+
+.first{
+  /*background-color: lightcoral;*/
+  height: 550rpx;
+
+  padding-top: 50rpx;
+  padding-bottom: 50rpx;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+}
+
+/*swiper{
+  height: 550rpx;
+
+  padding-top: 50rpx;
+  padding-bottom: 50rpx;
+}
+
+swiper-item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}*/
+
+scroll-view{
+  /*background-color: lightblue;*/
+  height: 300rpx;/*使用scroll必须要指定高度*/
+}
+
+scroll-view view{
+  color: grey;
+  text-align: center;
+  font-size: 35rpx;
+  line-height: 100rpx;
+}
+
+scroll-view .color{
+  color: white;
+  font-size: 40rpx;
+}
+
+@keyframes diskPlay{
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+.clear{
+  width: 300rpx;
+  height: 300rpx;
+  border-radius: 300rpx;
+
+  z-index: 1;
+
+  border: 80rpx solid  rgb(51, 49, 49);
+
+  animation-play-state: paused;
+
+  position: absolute;
+}
+
+.songImg{
+  width: 300rpx;
+  height: 300rpx;
+  border-radius: 300rpx;
+
+  z-index: 1;
+
+  border: 80rpx solid  rgb(51, 49, 49);
+
+  animation: diskPlay 20s linear infinite;
+
+  position: absolute;
+}
+
+.startPlaying, .stopPlaying{
+  width: 100rpx;
+  height: 100rpx;
+  z-index: 20;
+
+  /*居中*/
+  /*margin-left: 180rpx;
+  margin-top: 180rpx;
+  position: absolute;*/
+}
+
+/*.timebox{
+  color: white;
+
+  margin-bottom: 20rpx;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timebox slider{
+  width: 400rpx;
+}*/
+
+.recommendSongs, #comment_zone{
+  /*background-color: black;
+  opacity: 0.8;*/
+
+  padding: 20rpx;
+
+  color: white;
+}
+
+.recommendSong{
+  display: grid;
+  grid-template-columns: 1fr 6fr 1fr;
+  
+  height: 100rpx;
+  margin-top: 20rpx;
+}
+
+.cover image{
+  width: 80rpx;
+  height: 80rpx;
+
+  border-radius: 10rpx;
+
+  margin-top: 25rpx;
+}
+
+.detail{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+
+.playlist_name{
+  font-size: 30rpx;
+
+  /*文本过长以省略号代替超过的部分*/
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 500rpx;
+}
+
+.creator_name{
+  font-size: 20rpx;
+  color: gray;
+}
+
+.play_button image{
+  width: 50rpx;
+  height: 50rpx;
+
+  margin-top: 30rpx;
+  text-align: right;
+}
+
+.comment{
+  display: grid;
+  grid-template-columns: 1fr 7fr;
+  
+  margin-top:50rpx;
+}
+
+.icon image{
+  width: 80rpx;
+  height: 80rpx;
+
+  border-radius: 80rpx;
+
+}
+
+.head{
+  display: flex;
+  justify-content: space-between;
+}
+
+.user_info{
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 20rpx;
+}
+
+.user_name{
+  color: lightyellow;
+  font-size: 25rpx;
+}
+
+.time{
+  color: gray;
+  font-size: 20rpx;
+}
+
+.like .dislike{
+  font-size: 20rpx;
+}
+
+.like, .dislike image{
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.like text{
+  color: red;
+}
+
+.dislike text{
+  color: gray;
+}

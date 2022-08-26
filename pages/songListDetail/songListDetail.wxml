@@ -1,0 +1,45 @@
+<!--pages/songListDetail/songListDetail.wxml-->
+<view id="container_1" style="background: url({{cover}}) no-repeat; background-size: 100% 100%;">
+  <view id="playlist_info">
+      <view class="cover">
+        <image src="{{cover}}"></image>
+        <view class="playCount">
+          <image src="../../img/icon_startPlaying_white.png" style="width: 30rpx;height: 30rpx;"></image>
+          <text>{{playCount}}</text>
+        </view>
+      </view>
+      <view class="detail">
+        <text class="playlistName">{{playlistName}}</text>
+        <view class="middle">
+          <image class="avatar" src="{{avatarUrl}}"></image>
+          <text class="creator">{{creator}}</text>
+        </view>
+        <text class="description">{{description}}</text>
+      </view>
+    </view>
+    <view id="playlist_songs">
+      <view class="play_all">
+        <view class="play_button">
+          <image src="../../img/icon_play_black.png"></image>
+        </view>
+        <view>
+          <text>播放全部</text>
+          <text style="color: gray; font-size: 30rpx;">（共{{songs.length}}首）</text>
+        </view>
+      </view>
+      <view class="song" wx:for="{{songs}}" wx:key="index" bindtap="goToPlaySong" data-songid="{{item.id}}">
+        <text class="rank">{{index+1}}</text>
+        <view class="song_info">
+          <text class="songName">{{item.name}}</text>
+          <view class="origin_from">
+            <image wx:if="{{item.fee==1}}" src="../../img/icon_vip_red.png" style="width: 20rpx; height: 20rpx;"></image>
+            <text class="creators" wx:for="{{item.ar}}" wx:key="index">{{item.name}}</text>
+            <text class="album">-{{item.al.name}}</text>
+          </view>
+        </view>
+        <view class="play_button">
+          <image src="../../img/icon_play_black.png"></image>
+        </view>
+      </view>
+    </view>
+</view>

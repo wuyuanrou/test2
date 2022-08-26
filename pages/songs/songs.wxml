@@ -1,0 +1,18 @@
+<!--pages/songs/songs.wxml-->
+<view id="container_1">
+  <view id="search">
+    <image src="../../img/icon_search_black.png" bindtap="sendSearchWord"></image>
+    <input type="text" name="search" placeholder="{{keyWord}}" bindinput="getSearchWord"/>
+  </view>
+  <view class="songsList" >
+    <view class="song" wx:for="{{songs}}" wx:key="index">
+      <view class="detail" bindtap="playSong" data-songid="{{item.id}}">
+        <text class="songName">{{item.name}}</text>
+        <text class="description">{{item.artists[0].name}}-{{item.album.name}}</text>
+      </view>
+      <view>
+        <image src="../../img/icon_play_black.png"></image>
+      </view>
+    </view>
+  </view>
+</view>
